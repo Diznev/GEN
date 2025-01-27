@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="<%= config.language === 'German' ? 'de' : 'en' %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= config.companyName %> - <%= content.title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-gray: #f5f6fa;
+            --border-color: #ddd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr 250px;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-section img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar-article {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-article:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-article h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-article p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button[type="submit"] {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 200px 1fr 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .sidebar {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><%= config.companyName %></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><%= config.language === 'German' ? 'Startseite' : 'Home' %></a></li>
+                    <li><a href="about.html"><%= config.language === 'German' ? 'Über uns' : 'About Us' %></a></li>
+                    <li><a href="privacy.html"><%= config.language === 'German' ? 'Datenschutz' : 'Privacy' %></a></li>
+                    <li><a href="payment.html"><%= config.language === 'German' ? 'Zahlung' : 'Payment' %></a></li>
+                    <li><a href="contact.html"><%= config.language === 'German' ? 'Kontakt' : 'Contact' %></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3><%= content.sidebar.left.title %></h3>
+            <% content.sidebar.left.articles.forEach(article => { %>
+                <div class="sidebar-article">
+                    <h4><%= article.title %></h4>
+                    <p><%= article.summary %></p>
+                    <small><%= article.date %></small>
+                </div>
+            <% }); %>
+        </aside>
+
+        <main>
+            <section class="hero">
+                <h1><%= content.title %></h1>
+                <p><%= content.description %></p>
+            </section>
+
+            <% content.paragraphs.forEach((paragraph, index) => { %>
+                <section class="content-section">
+                    <% if (content.images && content.images[index]) { %>
+                        <img src="<%= content.images[index] %>" alt="<%= config.language === 'German' ? 'Abschnittsbild' : 'Section image' %> <%= index + 1 %>">
+                    <% } %>
+                    <p><%= paragraph %></p>
+                </section>
+            <% }); %>
+
+            <% if (page === 'contact') { %>
+                <section class="contact-form">
+                    <h2><%= config.language === 'German' ? 'Kontaktformular' : 'Contact Form' %></h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name"><%= config.language === 'German' ? 'Name' : 'Name' %></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><%= config.language === 'German' ? 'E-Mail' : 'Email' %></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message"><%= config.language === 'German' ? 'Nachricht' : 'Message' %></label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit"><%= config.language === 'German' ? 'Senden' : 'Send' %></button>
+                    </form>
+                </section>
+            <% } %>
+        </main>
+
+        <aside class="sidebar">
+            <h3><%= content.sidebar.right.title %></h3>
+            <% content.sidebar.right.news.forEach(item => { %>
+                <div class="sidebar-article">
+                    <h4><%= item.title %></h4>
+                    <p><%= item.summary %></p>
+                    <small><%= item.date %></small>
+                </div>
+            <% }); %>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <%= new Date().getFullYear() %> <%= config.companyName %></p>
+            <p><%= config.address %> | <%= config.phone %> | <%= config.email %></p>
+        </div>
+    </footer>
+</body>
+</html>
