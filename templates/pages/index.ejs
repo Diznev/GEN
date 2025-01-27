@@ -1,0 +1,17 @@
+<%- include('../partials/hero', { content }) %>
+
+<div class="features-grid">
+    <% content.images.slice(0, 3).forEach((image, index) => { %>
+        <div class="feature-card">
+            <img src="<%= image %>" alt="<%= config.language === 'German' ? 'Feature Bild' : 'Feature Image' %> <%= index + 1 %>">
+            <h3><%= content.features[index].title %></h3>
+            <p><%= content.features[index].description %></p>
+        </div>
+    <% }); %>
+</div>
+
+<% content.paragraphs.forEach((paragraph) => { %>
+    <section class="content-section">
+        <p><%= paragraph %></p>
+    </section>
+<% }); %>
