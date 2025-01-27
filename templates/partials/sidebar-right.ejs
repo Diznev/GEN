@@ -1,0 +1,13 @@
+<aside class="sidebar">
+    <h3><%= content.sidebar.right.title %></h3>
+    <% content.sidebar.right.news.forEach((item, index) => { %>
+        <div class="sidebar-article">
+            <% if (content.images[4] && index === 0) { %>
+                <img src="<%= content.images[4] %>" alt="<%= config.language === 'German' ? 'News Bild' : 'News Image' %>">
+            <% } %>
+            <h4><%= item.title %></h4>
+            <p><%= item.summary %></p>
+            <small><%= item.date %></small>
+        </div>
+    <% }); %>
+</aside>
