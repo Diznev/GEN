@@ -1,0 +1,25 @@
+<%- include('../partials/hero', { content }) %>
+
+<div class="privacy-content">
+    <% content.paragraphs.forEach((paragraph, index) => { %>
+        <section class="content-section">
+            <p><%= paragraph %></p>
+        </section>
+    <% }); %>
+
+    <!-- Static privacy policy sections -->
+    <section class="privacy-sections">
+        <div class="privacy-section">
+            <h3><%= config.language === 'German' ? 'Datenerhebung' : 'Data Collection' %></h3>
+            <p><%= config.language === 'German' 
+                ? 'Wir erheben nur die notwendigen Daten für die Bereitstellung unserer Dienste.' 
+                : 'We only collect necessary data for providing our services.' %></p>
+        </div>
+        <div class="privacy-section">
+            <h3><%= config.language === 'German' ? 'Datenspeicherung' : 'Data Storage' %></h3>
+            <p><%= config.language === 'German' 
+                ? 'Ihre Daten werden sicher und verschlüsselt gespeichert.' 
+                : 'Your data is stored securely and encrypted.' %></p>
+        </div>
+    </section>
+</div>
