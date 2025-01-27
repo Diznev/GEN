@@ -1,0 +1,50 @@
+<%- include('../partials/hero', { content }) %>
+
+<div class="contact-content">
+    <% content.paragraphs.forEach((paragraph, index) => { %>
+        <section class="content-section">
+            <p><%= paragraph %></p>
+        </section>
+    <% }); %>
+
+    <section class="contact-form">
+        <h2><%= config.language === 'German' ? 'Kontaktformular' : 'Contact Form' %></h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name"><%= config.language === 'German' ? 'Name' : 'Name' %></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email"><%= config.language === 'German' ? 'E-Mail' : 'Email' %></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject"><%= config.language === 'German' ? 'Betreff' : 'Subject' %></label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message"><%= config.language === 'German' ? 'Nachricht' : 'Message' %></label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit"><%= config.language === 'German' ? 'Senden' : 'Send' %></button>
+        </form>
+    </section>
+
+    <section class="contact-info">
+        <h2><%= config.language === 'German' ? 'Kontaktdaten' : 'Contact Information' %></h2>
+        <div class="contact-details">
+            <div class="contact-item">
+                <h3><%= config.language === 'German' ? 'Adresse' : 'Address' %></h3>
+                <p><%= config.address %></p>
+            </div>
+            <div class="contact-item">
+                <h3><%= config.language === 'German' ? 'Telefon' : 'Phone' %></h3>
+                <p><%= config.phone %></p>
+            </div>
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p><%= config.email %></p>
+            </div>
+        </div>
+    </section>
+</div>
