@@ -1,0 +1,33 @@
+<%- include('../partials/hero', { content }) %>
+
+<div class="about-content">
+    <% content.paragraphs.forEach((paragraph) => { %>
+        <section class="content-section">
+            <p><%= paragraph %></p>
+        </section>
+    <% }); %>
+
+    <section class="team-section">
+        <h2><%= config.language === 'German' ? 'Unser Team' : 'Our Team' %></h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h3><%= config.language === 'German' ? 'Geschäftsführung' : 'Management' %></h3>
+                <p><%= config.language === 'German' 
+                    ? 'Erfahrene Führung mit Vision' 
+                    : 'Experienced leadership with vision' %></p>
+            </div>
+            <div class="team-member">
+                <h3><%= config.language === 'German' ? 'Entwicklung' : 'Development' %></h3>
+                <p><%= config.language === 'German' 
+                    ? 'Innovative Lösungsentwicklung' 
+                    : 'Innovative solution development' %></p>
+            </div>
+            <div class="team-member">
+                <h3><%= config.language === 'German' ? 'Kundenservice' : 'Customer Service' %></h3>
+                <p><%= config.language === 'German' 
+                    ? 'Engagierte Kundenbetreuung' 
+                    : 'Dedicated customer support' %></p>
+            </div>
+        </div>
+    </section>
+</div>
