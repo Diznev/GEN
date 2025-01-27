@@ -1,0 +1,34 @@
+<%- include('../partials/hero', { content }) %>
+
+<div class="payment-content">
+    <% content.paragraphs.forEach((paragraph, index) => { %>
+        <section class="content-section">
+            <p><%= paragraph %></p>
+        </section>
+    <% }); %>
+
+    <!-- Static payment information -->
+    <section class="payment-methods">
+        <h2><%= config.language === 'German' ? 'Zahlungsmethoden' : 'Payment Methods' %></h2>
+        <div class="payment-grid">
+            <div class="payment-method">
+                <h3>PayPal</h3>
+                <p><%= config.language === 'German' 
+                    ? 'Schnell und sicher bezahlen' 
+                    : 'Quick and secure payment' %></p>
+            </div>
+            <div class="payment-method">
+                <h3><%= config.language === 'German' ? 'Kreditkarte' : 'Credit Card' %></h3>
+                <p><%= config.language === 'German' 
+                    ? 'Alle gängigen Karten akzeptiert' 
+                    : 'All major cards accepted' %></p>
+            </div>
+            <div class="payment-method">
+                <h3><%= config.language === 'German' ? 'Überweisung' : 'Bank Transfer' %></h3>
+                <p><%= config.language === 'German' 
+                    ? 'Klassische Banküberweisung' 
+                    : 'Traditional bank transfer' %></p>
+            </div>
+        </div>
+    </section>
+</div>
